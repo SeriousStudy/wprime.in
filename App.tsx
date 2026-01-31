@@ -43,7 +43,7 @@ const App: React.FC = () => {
   const isApiReady = useMemo(() => {
     try {
       // Check multiple possible locations for the API key in a bundled browser environment
-      const env = (window as any).process?.env || (typeof process !== 'undefined' ? process.env : {});
+      const env = {};
       const key = env.API_KEY || (window as any).VITE_API_KEY;
       return !!key && key.length > 5;
     } catch (e) {
